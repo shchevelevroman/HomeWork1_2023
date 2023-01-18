@@ -14,15 +14,17 @@ public class Car {
     final int numberOfSeats;
 
     private String seasonTires;
+
+    private int currentMonth;
     private boolean seasonTiresTest() {
-        int mouth = 5;
-        if (mouth >= 3 || mouth <= 10) {
-            seasonTires = "summerTires";
+        if (currentMonth >= 3 && currentMonth <= 10) {
+            seasonTires = "Летняя резина";
         } else {
-            seasonTires = "winterTires";
+            seasonTires = "Зимняя резина";
         }
+        return true;
     }
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int numberOfSeats, String seasonTires) {
+    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String bodyType, String registrationNumber, int numberOfSeats, int currentMonth, String seasonTires) {
         this.brand = brand == null  ? "default" : brand;
         this.model = model == null  || model.isEmpty() ? "default" : model;
         this.engineVolume = engineVolume <= 0 ? engineVolume : 1.5;
@@ -33,7 +35,9 @@ public class Car {
         this.bodyType = bodyType == null  || bodyType.isEmpty() ? "default" : bodyType;
         this.registrationNumber = registrationNumber == null  || registrationNumber.isEmpty() ? "default" : registrationNumber;
         this.numberOfSeats = numberOfSeats <= 0 ? numberOfSeats : 1; // требует корректировки, должно отображаться некорректное значение
+        this.currentMonth = currentMonth;
         this.seasonTires = seasonTires;
+        seasonTiresTest();
     }
     public String getBrand() {
         return brand;
@@ -104,6 +108,6 @@ public class Car {
 
     @Override
     public String toString() {
-        return brand + " " + model + " " + year + " года выпуска, " + " сборка - " + country + ", цвет кузова - " + color + ", объем двтигателя " + engineVolume;
+        return brand + " " + model + " " + year + " года выпуска, " + " сборка - " + country + ", цвет кузова - " + color + ", объем двтигателя " + engineVolume + ", трансмиссия - " + transmission + ", тип кузова - " + bodyType + ", номерной знак - " + registrationNumber + ", количество мест - " + numberOfSeats + ", сезонность шин - " + seasonTires;
     }
 }
