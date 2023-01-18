@@ -1,13 +1,9 @@
+import transport.Car;
+
 public class Main {
 
     public static void main(String[] args) {
-        Car car1 = new Car("Lada","Granta",1.7,"Желтый",2015,"Россия");
-        car1.setBrand("Lada");
-        car1.setModel("Granta");
-        car1.setYear(2015);
-        car1.setCountry("Россия");
-        car1.setColor("Желтый");
-        car1.setEngineVolume(1.7);
+        Car car1 = new Car("Lada","Granta",1.7,"Желтый",2015,"Россия","МКПП","Седан", "A111AA134",5, );
 
 
         Car car2 = new Car("Audi","A8 50 L TDI quattro",3.0,"Черный",2020,"Германия");
