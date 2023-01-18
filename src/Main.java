@@ -1,7 +1,6 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Task1");
         Car car1 = new Car("Lada","Granta",1.7,"Желтый",2015,"Россия");
         car1.setBrand("Lada");
         car1.setModel("Granta");

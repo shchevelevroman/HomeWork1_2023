@@ -6,17 +6,16 @@ public class Car {
     private int year;
     private String country;
 
+    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
+        this.brand = brand == null  ? "default" : brand;
+        this.model = model == null  || model.isEmpty() ? "default" : model;
+        this.engineVolume = engineVolume <= 0 ? engineVolume : 1.5;
+        this.color = color == null || color.isEmpty() ? "Белый" : color;
+        this.year = year <= 0 ? year : 2000;
+        this.country = country == null  || country.isEmpty() ? "default" : country;
+    }
     public String getBrand() {
         return brand;
-    }
-
-    public Car(String brand, String model, double engineVolume, String color, int year, String country) {
-        this.brand = brand;
-        this.model = model;
-        this.engineVolume = engineVolume;
-        this.color = color;
-        this.year = year;
-        this.country = country;
     }
 
     public void setBrand(String brand) {
